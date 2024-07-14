@@ -33,35 +33,14 @@ pip install sockets
 ```
 
 ### Working
-
-First run key.py to generate private key to use it for encrypting and decrypting the file.
-
-```bash
-python key.py
-```
-
-<p>then send this private_key.txt via server.py to client.py</p>
-<p>Then run server.py to start a server.</p>
-
-```bash
-python server.py
-```
-
-<p> Then enter the key file to send it to the client, dont encrypt it, I repeat don't  encrypt it. just plain old key file, then click on transfer button.</p>
- 
-<p> Change the host name from localhost to the server ip and then run the client server </p>
-
-```bash
-python client.py
-```
-
-<p>In client gui enter the name of the key file as private_key.txt and click on recieve button. after you receive a the private key you can send any file and encrypt it before sending.</p>
+<p>Run the app</p>
+<p>Generate private key</p>
+<p>send the private key to client computer</p>
+<p>select the file you want to transfer and enter the file with directory</p>
+<p>encrypt the file</p>
+<p>In Client computer enter the ip of the server computer</p>
+<p>Click on recieve button</p>
+<p>decrypt the file</p>
+<p>decrypt the file in server computer as well</p>
 
 ## ScreenShots:
-**Server**
-
-![sever](Images/Server_1.png)
-
-**Client**
-
-![](Images/Client_1.png)

@@ -3,6 +3,14 @@ import tkinter as tk
 from tkinter import ttk
 from cryptography.fernet import Fernet
 
+def generate_key():
+    try:
+        key = Fernet.generate_key()
+        with open('private_key.txt','wb') as file:
+            file.write(key)
+    except:
+        print("Can't generate private key.. something went wrong")
+
 def encrypt_file(file_path, key_path):
     
     with open(key_path, 'rb') as key_file:
@@ -140,8 +148,11 @@ label.pack()
 name_entry2 = ttk.Entry(root)
 name_entry2.pack()
 
-decryptbutton = ttk.Button(root,text="Encrypt File",command=lambda:encrypt_file(name_entry.get(), 'private_key.txt'))
-decryptbutton.pack(pady=20)
+generatebutton = ttk.Button(root,text='generate key',command=generate_key)
+generatebutton.pack(pady=20)
+
+encryptbutton = ttk.Button(root,text="Encrypt File",command=lambda:encrypt_file(name_entry.get(), 'private_key.txt'))
+encryptbutton.pack(pady=20)
 
 transferbutton = ttk.Button(root,text="Transfer file",command=transfer_file)
 transferbutton.pack(pady=20)
